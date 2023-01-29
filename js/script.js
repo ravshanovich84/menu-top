@@ -1,55 +1,36 @@
 $(document).ready(function () {
-    var $show = $(".show");
-    var $i = $(".show i");
-    var $hide = $("header .hide");
-    var $section = $("section");
-    var $success = $("section .success");
-    var $footer = $("footer");
+    var $btn = $(".show_hide-menu");
+    var $mane = $(".menu")
+    var $trasnform = $(".show_hide-menu h3 i")
+    $btn.click(function () {
+        $trasnform.css({ transform: "rotate(180deg)", transition: "1s" });
+
+        $mane.animate(
+
+            {
+                left: "0"
+
+            },
+            1000
+        )
+
+        $btn.click(function () {
 
 
-    $show.click(function () {
-        $section.css({
-            display: "block",
+
+            $mane.animate(
+                {
+                    left: "-300"
+
+                },
+                1000
+            )
+
         })
 
-        $i.css({
-            transform: "rotate(90deg)", transition: "1s",
-        });
-    });
-    $show.click(function () {
-        $hide.css({
-            display: "block",
+        $btn.click(function () {
+            $trasnform.css({ transform: "rotate(360deg)", transition: "1s" });
         })
 
-        $show.css({
-            display: "none",
-        })
-    });
-    $hide.click(function () {
-        $show.css({
-            display: "block",
-        })
-
-        $hide.css({
-            display: "none",
-        })
-
-        $section.css({
-            display: "none",
-        })
-
-        $footer.css({
-            display: "none",
-        })
-
-        $i.css({
-            transform: "rotate(270deg)", transition: "1s",
-        });
-    });
-    $success.click(function () {
-        $footer.css({
-            display: "block",
-        })
-
-    });
+    })
 });
